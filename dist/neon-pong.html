@@ -6,6 +6,8 @@
 <meta name="theme-color" content="#070b16">
 <title>Neon Pong</title>
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&display=swap');
+
 :root {
   --bg: #070b16;
   --ink: #eaf2ff;
@@ -14,6 +16,7 @@
   --rival: #ff5c8a;
   --line: rgba(140, 170, 220, 0.22);
   --panel: rgba(10, 16, 30, 0.86);
+  --display: "Chakra Petch", ui-sans-serif, system-ui, sans-serif;
   color-scheme: dark;
 }
 
@@ -25,7 +28,7 @@ html, body {
   overflow: hidden;
   background: var(--bg);
   color: var(--ink);
-  font: 400 16px/1.45 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  font: 400 16px/1.45 ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   -webkit-font-smoothing: antialiased;
   -webkit-tap-highlight-color: transparent;
   overscroll-behavior: none;
@@ -108,6 +111,7 @@ html, body {
 
 .logo {
   margin: 0 0 6px;
+  font-family: var(--display);
   font-size: 34px;
   font-weight: 800;
   letter-spacing: .16em;
@@ -116,7 +120,7 @@ html, body {
 }
 .logo span { color: var(--rival); text-shadow: 0 0 24px rgba(255, 92, 138, .45); }
 
-h2 { margin: 0 0 10px; font-size: 25px; letter-spacing: .02em; }
+h2 { margin: 0 0 10px; font-family: var(--display); font-weight: 600; font-size: 26px; letter-spacing: .04em; }
 .tagline { margin: 0 0 22px; color: var(--muted); font-size: 14px; }
 
 .field { margin-bottom: 20px; }
@@ -162,8 +166,10 @@ h2 { margin: 0 0 10px; font-size: 25px; letter-spacing: .02em; }
   border: 0;
   border-radius: 15px;
   font: inherit;
+  font-family: var(--display);
   font-weight: 600;
-  font-size: 16px;
+  font-size: 17px;
+  letter-spacing: .04em;
   cursor: pointer;
   transition: transform .12s ease, filter .12s ease;
 }
@@ -184,7 +190,8 @@ h2 { margin: 0 0 10px; font-size: 25px; letter-spacing: .02em; }
 
 .result-score {
   margin: 4px 0 2px;
-  font-size: 42px;
+  font-family: var(--display);
+  font-size: 44px;
   font-weight: 800;
   letter-spacing: .06em;
   font-variant-numeric: tabular-nums;
@@ -664,7 +671,7 @@ h2 { margin: 0 0 10px; font-size: 25px; letter-spacing: .02em; }
 
     // scores behind the play
     c.save();
-    c.font = '700 150px system-ui, sans-serif';
+    c.font = '700 150px "Chakra Petch", ui-sans-serif, system-ui, sans-serif';
     c.textAlign = 'center';
     c.textBaseline = 'middle';
     c.fillStyle = 'rgba(255,92,138,0.11)';
@@ -724,7 +731,7 @@ h2 { margin: 0 0 10px; font-size: 25px; letter-spacing: .02em; }
     if (this.state === 'serve') {
       var n = Math.ceil(this.serveTimer * 3.34);
       c.fillStyle = 'rgba(234,242,255,0.5)';
-      c.font = '600 26px system-ui, sans-serif';
+      c.font = '600 26px "Chakra Petch", ui-sans-serif, system-ui, sans-serif';
       c.textAlign = 'center';
       c.textBaseline = 'middle';
       c.fillText(n > 0 ? String(n) : 'Los!', FIELD_W / 2, H / 2 - 46);

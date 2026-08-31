@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&display=swap');
+
 :root {
   --bg: #070b16;
   --ink: #eaf2ff;
@@ -6,6 +8,7 @@
   --rival: #ff5c8a;
   --line: rgba(140, 170, 220, 0.22);
   --panel: rgba(10, 16, 30, 0.86);
+  --display: "Chakra Petch", ui-sans-serif, system-ui, sans-serif;
   color-scheme: dark;
 }
 
@@ -17,7 +20,7 @@ html, body {
   overflow: hidden;
   background: var(--bg);
   color: var(--ink);
-  font: 400 16px/1.45 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  font: 400 16px/1.45 ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   -webkit-font-smoothing: antialiased;
   -webkit-tap-highlight-color: transparent;
   overscroll-behavior: none;
@@ -100,6 +103,7 @@ html, body {
 
 .logo {
   margin: 0 0 6px;
+  font-family: var(--display);
   font-size: 34px;
   font-weight: 800;
   letter-spacing: .16em;
@@ -108,7 +112,7 @@ html, body {
 }
 .logo span { color: var(--rival); text-shadow: 0 0 24px rgba(255, 92, 138, .45); }
 
-h2 { margin: 0 0 10px; font-size: 25px; letter-spacing: .02em; }
+h2 { margin: 0 0 10px; font-family: var(--display); font-weight: 600; font-size: 26px; letter-spacing: .04em; }
 .tagline { margin: 0 0 22px; color: var(--muted); font-size: 14px; }
 
 .field { margin-bottom: 20px; }
@@ -154,8 +158,10 @@ h2 { margin: 0 0 10px; font-size: 25px; letter-spacing: .02em; }
   border: 0;
   border-radius: 15px;
   font: inherit;
+  font-family: var(--display);
   font-weight: 600;
-  font-size: 16px;
+  font-size: 17px;
+  letter-spacing: .04em;
   cursor: pointer;
   transition: transform .12s ease, filter .12s ease;
 }
@@ -176,7 +182,8 @@ h2 { margin: 0 0 10px; font-size: 25px; letter-spacing: .02em; }
 
 .result-score {
   margin: 4px 0 2px;
-  font-size: 42px;
+  font-family: var(--display);
+  font-size: 44px;
   font-weight: 800;
   letter-spacing: .06em;
   font-variant-numeric: tabular-nums;

@@ -359,7 +359,7 @@
 
     // scores behind the play
     c.save();
-    c.font = '700 150px system-ui, sans-serif';
+    c.font = '700 150px "Chakra Petch", ui-sans-serif, system-ui, sans-serif';
     c.textAlign = 'center';
     c.textBaseline = 'middle';
     c.fillStyle = 'rgba(255,92,138,0.11)';
@@ -419,7 +419,7 @@
     if (this.state === 'serve') {
       var n = Math.ceil(this.serveTimer * 3.34);
       c.fillStyle = 'rgba(234,242,255,0.5)';
-      c.font = '600 26px system-ui, sans-serif';
+      c.font = '600 26px "Chakra Petch", ui-sans-serif, system-ui, sans-serif';
       c.textAlign = 'center';
       c.textBaseline = 'middle';
       c.fillText(n > 0 ? String(n) : 'Los!', FIELD_W / 2, H / 2 - 46);
