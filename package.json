@@ -1,0 +1,12 @@
+{
+  "name": "neon-pong",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Neon Pong — installierbares Ping-Pong-Spiel fürs Handy (PWA, offline spielbar).",
+  "scripts": {
+    "start": "npx --yes http-server -p 8099 -c-1 .",
+    "icons": "node tools/make-icons.mjs",
+    "build": "node tools/build-single.mjs"
+  },
+  "license": "MIT"
+}

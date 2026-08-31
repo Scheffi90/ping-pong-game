@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
+<title>Neon Pong</title>
+<meta name="description" content="Ping-Pong fürs Handy — Touch-Steuerung, offline spielbar.">
+<meta name="theme-color" content="#070b16">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Neon Pong">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
+<link rel="icon" href="icons/icon-192.png">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="app">
+  <canvas id="game"></canvas>
+
+  <div id="overlay" class="overlay">
+    <section class="panel" data-screen="menu">
+      <h1 class="logo">NEON<span>PONG</span></h1>
+      <p class="tagline">Erster auf 7 Punkte gewinnt.</p>
+      <div class="field">
+        <span class="label">Schwierigkeit</span>
+        <div class="segmented" id="difficulty" role="radiogroup" aria-label="Schwierigkeit">
+          <button type="button" data-value="easy" role="radio" aria-checked="false">Leicht</button>
+          <button type="button" data-value="normal" role="radio" aria-checked="true">Normal</button>
+          <button type="button" data-value="hard" role="radio" aria-checked="false">Schwer</button>
+        </div>
+      </div>
+      <button type="button" class="btn primary" data-action="start">Spielen</button>
+      <p class="hint">Finger über den unteren Bereich ziehen, um den Schläger zu bewegen.</p>
+      <p class="record" id="record"></p>
+    </section>
+
+    <section class="panel" data-screen="paused" hidden>
+      <h2>Pause</h2>
+      <button type="button" class="btn primary" data-action="resume">Weiter</button>
+      <button type="button" class="btn ghost" data-action="menu">Zum Menü</button>
+    </section>
+
+    <section class="panel" data-screen="gameover" hidden>
+      <h2 id="result-title">Gewonnen!</h2>
+      <p class="result-score" id="result-score">11 : 7</p>
+      <p class="result-meta" id="result-meta"></p>
+      <button type="button" class="btn primary" data-action="restart">Nochmal</button>
+      <button type="button" class="btn ghost" data-action="menu">Zum Menü</button>
+    </section>
+  </div>
+
+  <div id="hud" class="hud" hidden>
+    <button type="button" id="pause-btn" class="icon-btn" aria-label="Pause">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="7" y="5" width="3.5" height="14" rx="1.2"/><rect x="13.5" y="5" width="3.5" height="14" rx="1.2"/></svg>
+    </button>
+    <button type="button" id="sound-btn" class="icon-btn" aria-label="Ton an/aus" aria-pressed="true">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9.5h3.2L12 5.4v13.2L7.2 14.5H4z"/><path class="wave" d="M15.4 8.8a4.6 4.6 0 0 1 0 6.4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path class="mute" d="M15.5 9.5l5 5m0-5l-5 5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+    </button>
+  </div>
+</div>
+<script src="js/audio.js"></script>
+<script src="js/game.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
